@@ -2,40 +2,26 @@
 
 # Project Name
 
-> Description the project.
+> This project contains a Ruby project that keeps track of book rentals from a school library. It uses OOP features.
 
 
 ## Built With
 
 - Ruby
 
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
-
-
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
+- Git
+- Ruby
+- IRB (recommmended)
+
 ### Setup
 
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
-
+    run school_library.rb
 ## Authors
 
 👤 **David Vera**
@@ -60,8 +46,6 @@ Give a ⭐️ if you like this project!
 - My supportive family 😊
 - Microverse
 - Hat tip to anyone whose code was used
-- Inspiration
-- etc
 
 ## 📝 License
 
