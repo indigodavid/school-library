@@ -2,42 +2,26 @@
 
 # Project Name
 
-> Description the project.
+> This project contains a Ruby project that keeps track of book rentals from a school library. It uses OOP features.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
-
+- Ruby
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
+- Git
+- Ruby
+- IRB (recommmended)
+
 ### Setup
 
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
-
+    run school_library.rb
 ## Authors
 
 👤 **David Vera**
@@ -46,11 +30,6 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: [![Twitter Badge](https://img.shields.io/badge/-indigo1987-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/indigo1987)
 - LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-davidveracastillo-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)](https://linkedin.com/in/david-vera-castillo-001b5756/)
 
-👤 **Author 2**
-
-- GitHub: [![GitHub Badge](https://img.shields.io/badge/-author2-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/author2)
-- Twitter: [![Twitter Badge](https://img.shields.io/badge/-author2-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/author2)
-- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-author2-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)](https://linkedin.com/in/author2/)
 
 ## 🤝 Contributing
 
@@ -67,8 +46,6 @@ Give a ⭐️ if you like this project!
 - My supportive family 😊
 - Microverse
 - Hat tip to anyone whose code was used
-- Inspiration
-- etc
 
 ## 📝 License
 
