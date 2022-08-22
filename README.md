@@ -7,9 +7,7 @@
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Ruby
 
 ## Live Demo (if available)
 
@@ -46,11 +44,6 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: [![Twitter Badge](https://img.shields.io/badge/-indigo1987-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/indigo1987)
 - LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-davidveracastillo-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)](https://linkedin.com/in/david-vera-castillo-001b5756/)
 
-👤 **Author 2**
-
-- GitHub: [![GitHub Badge](https://img.shields.io/badge/-author2-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/author2)
-- Twitter: [![Twitter Badge](https://img.shields.io/badge/-author2-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/author2)
-- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-author2-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)](https://linkedin.com/in/author2/)
 
 ## 🤝 Contributing
 

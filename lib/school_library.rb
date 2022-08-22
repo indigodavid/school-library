@@ -8,7 +8,7 @@ module SchoolLibrary
   # Your code goes here...
   p1 = Person.new(18, 'Fabian')
   t1 = Teacher.new(35, 'Computer Science', 'David')
-  s1 = Student.new(17, '101', 'Leonardo')
+  s1 = Student.new(17, '101', 'Leonardo', parent_permission: false)
 
   p p1
   p t1
