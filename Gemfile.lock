@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ruby_template (0.1.0)
+    school_library (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -36,7 +36,7 @@ PLATFORMS
 DEPENDENCIES
   rake (~> 13.0)
   rubocop (>= 1.0, < 2.0)
-  ruby_template!
+  school_library!
 
 BUNDLED WITH
    2.3.7

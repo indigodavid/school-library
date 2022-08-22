@@ -1,6 +1,6 @@
-require_relative 'ruby_template/version'
+require_relative 'school_library/version'
 
-module RubyTemplate
+module SchoolLibrary
   class Error < StandardError; end
   # Your code goes here...
 end

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in ruby_template.gemspec
+# Specify your gem's dependencies in school_library.gemspec
 gemspec
 
 gem 'rake', '~> 13.0'

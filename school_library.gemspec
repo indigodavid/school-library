@@ -1,21 +1,21 @@
-require_relative 'lib/ruby_template/version'
+require_relative 'lib/school_library/version'
 
 Gem::Specification.new do |spec|
-  spec.name = 'ruby_template'
-  spec.version = RubyTemplate::VERSION
+  spec.name = 'school_library'
+  spec.version = SchoolLibrary::VERSION
   spec.authors = ['David Vera Castillo']
   spec.email = ['indigodavid@gmail.com']
 
   spec.summary = 'Ruby Template'
   spec.description = 'Description of new Ruby repository'
-  spec.homepage = 'https://github.com/indigodavid/ruby_template.git'
+  spec.homepage = 'https://github.com/indigodavid/school_library.git'
   spec.required_ruby_version = '>= 2.6.0'
 
   spec.metadata['allowed_push_host'] = "TODO: Set to your gem server 'https://example.com'"
 
   spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = 'https://github.com/indigodavid/ruby_template.git'
-  spec.metadata['changelog_uri'] = 'https://github.com/indigodavid/ruby_template/CHANGELOG.md'
+  spec.metadata['source_code_uri'] = 'https://github.com/indigodavid/school_library.git'
+  spec.metadata['changelog_uri'] = 'https://github.com/indigodavid/school_library/CHANGELOG.md'
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
