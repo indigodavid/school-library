@@ -2,10 +2,14 @@ require_relative 'school_library/version'
 require_relative 'school_library/person'
 require_relative 'school_library/teacher'
 require_relative 'school_library/student'
+require_relative 'school_library/capitalize_decorator'
+require_relative 'school_library/trimmer_decorator'
 
 module SchoolLibrary
   class Error < StandardError; end
   # Your code goes here...
+
+  # test base classes
   p1 = Person.new(18, 'Fabian')
   t1 = Teacher.new(35, 'Computer Science', 'David')
   s1 = Student.new(17, '101', 'Leonardo', parent_permission: false)
@@ -21,4 +25,12 @@ module SchoolLibrary
   p s1.can_use_services?
 
   p s1.play_hooky
+
+  # test decorators
+  person = Person.new(22, 'maximilianus')
+  p person.correct_name
+  capitalized_person = CapitalizeDecorator.new(person)
+  p capitalized_person.correct_name
+  capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
+  p capitalized_trimmed_person.correct_name
 end
