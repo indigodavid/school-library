@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require_relative 'app'
 
 def print_options
@@ -25,7 +26,7 @@ def call_actions(option, app)
   when 5
     create_rental(app)
   when 6
-    puts 'List rentals'
+    list_rentals_by_id(app)
   end
 end
 
@@ -67,6 +68,7 @@ def create_book(app)
 end
 
 def create_rental(app)
+  # Display book options
   puts 'Select a book from the following list by number:'
   app.books.each_with_index {
     |book, index|
@@ -74,6 +76,7 @@ def create_rental(app)
   }
   book_index = gets.chomp.to_i
 
+  # Display people options
   puts 'Select a person from the following list by number (not id):'
   app.people.each_with_index {
     |person, index|
@@ -81,10 +84,17 @@ def create_rental(app)
   }
   person_index = gets.chomp.to_i
 
+  # Get date
   puts 'Date: '
   date = gets.chomp
 
   app.create_rental(date, person_index, book_index)
+end
+
+def list_rentals_by_id(app)
+  puts 'ID of person'
+  id = gets.chomp.to_i
+  app.list_rentals_by_id(id)
 end
 
 def main
