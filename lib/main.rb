@@ -70,18 +70,16 @@ end
 def create_rental(app)
   # Display book options
   puts 'Select a book from the following list by number:'
-  app.books.each_with_index {
-    |book, index|
+  app.books.each_with_index do |book, index|
     puts "#{index}) Title: \"#{book.title}\", Author: #{book.author}"
-  }
+  end
   book_index = gets.chomp.to_i
 
   # Display people options
   puts 'Select a person from the following list by number (not id):'
-  app.people.each_with_index {
-    |person, index|
+  app.people.each_with_index do |person, index|
     puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-  }
+  end
   person_index = gets.chomp.to_i
 
   # Get date
