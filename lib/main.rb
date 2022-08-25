@@ -1,7 +1,14 @@
+require_relative 'app'
+
+def list_books(app)
+  app.list_books()
+end
+
 def main
+  app = App.new()
   option = 0
+  puts 'Welcome to School Library Rental App!'
   while option != '7'
-    puts 'Welcome to School Library Rental App!'
     puts ''
     puts 'Please choose and option by entering a number:'
     puts '1 - List all books'
@@ -12,11 +19,11 @@ def main
     puts '6 - List all the rentals for a given person id'
     puts '7 - Exit'
 
-    p 'Type your option and press Enter:'
     option = gets.chomp
     case option
     when '1'
-      puts 'List books'
+      puts '## Books ##'
+      list_books(app)
     when '2'
       puts 'List people'
     when '3'
@@ -34,5 +41,6 @@ def main
     end
   end
 end
+
 
 main()
