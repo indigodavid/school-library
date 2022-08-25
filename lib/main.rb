@@ -8,6 +8,28 @@ def list_people(app)
   app.list_people()
 end
 
+def create_person(app)
+  p 'Do you want to create a Student (1) or a Teacher (2)? [Input the number]:'
+  type = gets.chomp
+  p 'Age: '
+  age = gets.chomp.to_i
+  p 'Name: '
+  name = gets.chomp
+  if type == '1'
+    p 'Has parent permission? [Y/N]: '
+    parent_permission = gets.chomp
+    app.create_student(age, name, parent_permission: parent_permission.downcase == 'y')
+    puts 'Student created successfully'
+  elsif type == '2'
+    p 'Specialization: '
+    specialization = gets.chomp
+    app.create_teacher(age, specialization, name)
+    puts 'Teacher created successfully'
+  else
+    'Input error. Going back to menu...'
+  end
+end
+
 def main
   app = App.new()
   option = 0
@@ -32,7 +54,8 @@ def main
       puts '## People ##'
       list_people(app)
     when '3'
-      puts 'Create person'
+      puts '## Create person ##'
+      create_person(app)
     when '4'
       puts 'Create book'
     when '5'
@@ -46,6 +69,5 @@ def main
     end
   end
 end
-
 
 main()
