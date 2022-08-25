@@ -20,5 +20,16 @@ class App
     end
   end
 
+  def list_people
+    if @people.length > 0
+      people.each {|person|
+        p '[Student]' if person.is_a?(Student)
+        p '[Teacher]' if person.is_a?(Teacher)   
+        p "Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+      }
+    else
+      puts 'No people added.'
+    end
+  end
 end
 

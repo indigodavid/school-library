@@ -4,6 +4,10 @@ def list_books(app)
   app.list_books()
 end
 
+def list_people(app)
+  app.list_people()
+end
+
 def main
   app = App.new()
   option = 0
@@ -25,7 +29,8 @@ def main
       puts '## Books ##'
       list_books(app)
     when '2'
-      puts 'List people'
+      puts '## People ##'
+      list_people(app)
     when '3'
       puts 'Create person'
     when '4'
