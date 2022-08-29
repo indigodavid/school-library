@@ -17,19 +17,24 @@ To get a local copy up and running follow these simple example steps.
 
 - Git
 - Ruby
-- IRB (recommmended)
+- IRB (optional)
 
 ### Setup
 
-    run school_library.rb
+    run main.rb
 ## Authors
 
 👤 **David Vera**
 
 - GitHub: [![GitHub Badge](https://img.shields.io/badge/-indigodavid-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/indigodavid)
 - Twitter: [![Twitter Badge](https://img.shields.io/badge/-indigo1987-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/indigo1987)
-- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-davidveracastillo-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)](https://linkedin.com/in/david-vera-castillo-001b5756/)
+- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-davidveracastillo-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)](https://linkedin.com/in/davidveracastillo/)
 
+👤 **@BregornOriginal**
+
+- GitHub: [![GitHub Badge](https://img.shields.io/badge/-BregornOriginal-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/BregornOriginal)
+- Twitter: [![Twitter Badge](https://img.shields.io/badge/-Bregorn-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/Bregorn)
+- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-juliogagliardi-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)](https://www.linkedin.com/in/julio-gagliardi/)
 
 ## 🤝 Contributing
 
