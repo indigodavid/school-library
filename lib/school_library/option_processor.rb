@@ -1,7 +1,6 @@
 require_relative '../app'
 
 class OptionProcessor
-
   def call_actions(option, app)
     case option
     when 1
@@ -22,11 +21,11 @@ class OptionProcessor
   def list_books(app)
     app.list_books
   end
-  
+
   def list_people(app)
     app.list_people
   end
-  
+
   def create_person(app)
     puts 'Do you want to create a Student (1) or a Teacher (2)? [Input the number]:'
     type = gets.chomp.to_i
@@ -47,7 +46,7 @@ class OptionProcessor
       puts 'Input error. Returning to menu...'
     end
   end
-  
+
   def create_book(app)
     puts 'Title: '
     title = gets.chomp
@@ -55,7 +54,7 @@ class OptionProcessor
     author = gets.chomp
     app.create_book(title, author)
   end
-  
+
   def create_rental(app)
     # Display book options
     puts 'Select a book from the following list by number:'
@@ -63,25 +62,24 @@ class OptionProcessor
       puts "#{index}) Title: \"#{book.title}\", Author: #{book.author}"
     end
     book_index = gets.chomp.to_i
-  
+
     # Display people options
     puts 'Select a person from the following list by number (not id):'
     app.people.each_with_index do |person, index|
       puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
     person_index = gets.chomp.to_i
-  
+
     # Get date
     puts 'Date: '
     date = gets.chomp
-  
+
     app.create_rental(date, person_index, book_index)
   end
-  
+
   def list_rentals_by_id(app)
     puts 'ID of person'
     id = gets.chomp.to_i
     app.list_rentals_by_id(id)
   end
 end
-
