@@ -92,6 +92,24 @@ class App
     books_file.close
   end
   
+  def read_people_from_file
+    if File.exist?("#{DATA_DIRECTORY}people.json")
+      people_file = File.open("#{DATA_DIRECTORY}people.json")
+      data = JSON.parse(people_file.read)
+      data.each do |person|
+        if person['class'] == 'Student'
+          @people << Student.new(person['age'].to_i, person['clasroom'], person['name'], person['parent_permission'].to_b)
+        elsif person['class'] == 'Teacher'
+          @people << Teacher.new(person['age'].to_i, person['specialization'], person['name'])
+        end
+      end
+      people_file.close
+    else
+      @people = []
+      write_people_data
+    end
+  end
+
   
 
 end
