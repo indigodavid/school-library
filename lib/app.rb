@@ -7,7 +7,8 @@ require 'json'
 
 class App
   attr_accessor :people, :books, :rentals
-  DATA_DIRECTORY = "./lib/library_data/"
+
+  DATA_DIRECTORY = './lib/library_data/'.freeze
   def initialize
     @people = []
     @books = []
@@ -15,6 +16,7 @@ class App
     @classroom = 'Default Class'
     read_people_from_file
     read_books_from_file
+    read_rentals_from_file
   end
 
   def list_books
@@ -35,22 +37,22 @@ class App
     end
   end
 
-  def create_student(age, name, parent_permission)
-    student = Student.new(age, @classroom, name, parent_permission: parent_permission)
+  def create_student(age, name, parent_permission, id = nil)
+    student = Student.new(age, @classroom, name, id, parent_permission: parent_permission)
     @people.push(student)
     write_people_data
     puts 'Student created successfully'
   end
 
-  def create_teacher(age, specialization, name)
-    teacher = Teacher.new(age, specialization, name)
+  def create_teacher(age, specialization, name, id = nil)
+    teacher = Teacher.new(age, specialization, name, id)
     @people.push(teacher)
     write_people_data
     puts 'Teacher created successfully'
   end
 
-  def create_book(title, author)
-    book = Book.new(title, author)
+  def create_book(title, author, id = nil)
+    book = Book.new(title, author, id)
     @books.push(book)
     write_books_data
     puts 'Book created successfully'
