@@ -1,0 +1,17 @@
+[
+  {
+    "class": "Student",
+    "age": 0,
+    "name": "fds",
+    "classroom": "Default Class",
+    "parent_permission": {
+      "parent_permission": true
+    }
+  },
+  {
+    "class": "Teacher",
+    "age": 321,
+    "name": "dsa",
+    "specialization": "fdsa"
+  }
+]
