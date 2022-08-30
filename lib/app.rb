@@ -110,6 +110,17 @@ class App
     end
   end
 
-  
+  def write_people_data
+    if @books.length > 0
+      data = @books.map do |book|
+        { title: book.title, author: book.author }
+      end
+    else
+      data = []
+    end
+    books_file = File.open("#{DATA_DIRECTORY}books.json", "w")
+    books_file.write(JSON.pretty_generate(data))
+    books_file.close
+  end
 
 end
