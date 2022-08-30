@@ -61,6 +61,7 @@ class App
   def create_rental(date, person_index, book_index)
     rental = Rental.new(date, @people[person_index], @books[book_index])
     @rentals.push(rental)
+    write_rentals_data
     puts 'Rental created successfully'
   end
 
@@ -74,38 +75,39 @@ class App
       books_file = File.open("#{DATA_DIRECTORY}books.json")
       data = JSON.parse(books_file.read)
       data.each do |book|
-        @books << Book.new(book['title'], book['author'])
+        @books << Book.new(book['title'], book['author'], book['id'])
       end
       books_file.close
     else
       @books = []
       write_books_data
     end
-    
   end
 
   def write_books_data
-    if @books.length > 0
-      data = @books.map do |book|
-        { title: book.title, author: book.author }
-      end
-    else
-      data = []
-    end
-    books_file = File.open("#{DATA_DIRECTORY}books.json", "w")
+    data = if @books.length.positive?
+             @books.map do |book|
+               { title: book.title, author: book.author, id: book.id }
+             end
+           else
+             []
+           end
+    books_file = File.open("#{DATA_DIRECTORY}books.json", 'w')
     books_file.write(JSON.pretty_generate(data))
     books_file.close
   end
-  
+
   def read_people_from_file
     if File.exist?("#{DATA_DIRECTORY}people.json")
       people_file = File.open("#{DATA_DIRECTORY}people.json")
       data = JSON.parse(people_file.read)
       data.each do |person|
-        if person['class'] == 'Student'
-          @people << Student.new(person['age'], person['clasroom'], person['name'], parent_permission: person['parent_permission'])
-        elsif person['class'] == 'Teacher'
-          @people << Teacher.new(person['age'], person['specialization'], person['name'])
+        case person['class']
+        when 'Student'
+          @people << Student.new(person['age'], person['clasroom'], person['name'], person['id'],
+                                 parent_permission: person['parent_permission'])
+        when 'Teacher'
+          @people << Teacher.new(person['age'], person['specialization'], person['name'], person['id'])
         end
       end
       people_file.close
