@@ -3,15 +3,17 @@ require_relative 'school_library/teacher'
 require_relative 'school_library/book'
 require_relative 'school_library/rental'
 require_relative 'school_library/classroom'
+require 'json'
 
 class App
   attr_accessor :people, :books, :rentals
-
+  DATA_DIRECTORY = "./lib/library_data/"
   def initialize
     @people = []
     @books = []
     @rentals = []
     @classroom = 'Default Class'
+    read_books_from_file
   end
 
   def list_books
@@ -47,6 +49,7 @@ class App
   def create_book(title, author)
     book = Book.new(title, author)
     @books.push(book)
+    write_books_data
     puts 'Book created successfully'
   end
 
@@ -60,4 +63,20 @@ class App
     filtered_rentals = @rentals.select { |rental| rental.person.id == person_id }
     filtered_rentals.each { |rental| puts "Date: #{rental.date} Book: #{rental.book.title} by #{rental.book.author}" }
   end
+
+  def read_books_from_file
+    if File.exist?("#{DATA_DIRECTORY}books.json")
+      books_file = File.open("#{DATA_DIRECTORY}books.json")
+      data = JSON.parse(books_file.read)
+      data.each do |book|
+        @books << Book.new(book['title'], book['author'])
+      end
+      books_file.close
+    else
+      @books = []
+      write_books_data
+    end
+    
+  end
+
 end
