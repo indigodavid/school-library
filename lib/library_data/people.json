@@ -1,0 +1,17 @@
+[
+  {
+    "class": "Student",
+    "age": 25,
+    "name": "David",
+    "classroom": "Default Class",
+    "parent_permission": true,
+    "id": 75322
+  },
+  {
+    "class": "Teacher",
+    "age": 35,
+    "name": "Julio",
+    "specialization": "Computer Science",
+    "id": 3070
+  }
+]
