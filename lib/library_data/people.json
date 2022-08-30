@@ -4,19 +4,14 @@
     "age": 25,
     "name": "David",
     "classroom": "Default Class",
-    "parent_permission": true
-  },
-  {
-    "class": "Student",
-    "age": 16,
-    "name": "Julio",
-    "classroom": "Default Class",
-    "parent_permission": true
+    "parent_permission": true,
+    "id": 75322
   },
   {
     "class": "Teacher",
-    "age": 54,
-    "name": "Fabian",
-    "specialization": "Architecture"
+    "age": 35,
+    "name": "Julio",
+    "specialization": "Computer Science",
+    "id": 3070
   }
 ]
