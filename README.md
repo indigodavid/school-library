@@ -21,7 +21,9 @@ To get a local copy up and running follow these simple example steps.
 
 ### Setup
 
-    run main.rb
+    git clone https://github.com/indigodavid/school-library.git
+    cd school-library/
+    run lib/main.rb
 ## Authors
 
 👤 **David Vera**
