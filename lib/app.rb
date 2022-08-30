@@ -125,7 +125,8 @@ class App
                  { class: person.class, age: person.age, name: person.name, classroom: person.classroom,
                    parent_permission: permission, id: person.id }
                elsif person.instance_of?(Teacher)
-                 { class: person.class, age: person.age, name: person.name, specialization: person.specialization, id: person.id }
+                 { class: person.class, age: person.age, name: person.name, specialization: person.specialization,
+                   id: person.id }
                end
              end
            else
@@ -141,8 +142,8 @@ class App
       rentals_file = File.open("#{DATA_DIRECTORY}rentals.json")
       data = JSON.parse(rentals_file.read)
       data.each do |rental|
-        filtered_person = @people.find {|person| rental['person_id'] == person.id}
-        filtered_book = @books.find {|book| rental['book_id'] == book.id}
+        filtered_person = @people.find { |person| rental['person_id'] == person.id }
+        filtered_book = @books.find { |book| rental['book_id'] == book.id }
         @rentals << Rental.new(rental['date'], filtered_person, filtered_book)
       end
       rentals_file.close
@@ -155,7 +156,7 @@ class App
   def write_rentals_data
     data = if @rentals.length.positive?
              @rentals.map do |rental|
-               { date: rental.date, person_id: rental.person.id, book_id: rental.book.id}
+               { date: rental.date, person_id: rental.person.id, book_id: rental.book.id }
              end
            else
              []
