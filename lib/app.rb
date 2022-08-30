@@ -118,20 +118,50 @@ class App
   end
 
   def write_people_data
-    if @people.length > 0
-      data = @people.map do |person|
-        if person.class == Student
-          permission = person.parent_permission[:parent_permission]
-        { class: person.class, age: person.age, name: person.name, classroom: person.classroom, parent_permission: permission }
-        elsif person.class == Teacher
-          { class: person.class, age: person.age, name: person.name, specialization: person.specialization }
-        end
-      end
-    else
-      data = []
-    end
-    people_file = File.open("#{DATA_DIRECTORY}people.json", "w")
+    data = if @people.length.positive?
+             @people.map do |person|
+               if person.instance_of?(Student)
+                 permission = person.parent_permission[:parent_permission]
+                 { class: person.class, age: person.age, name: person.name, classroom: person.classroom,
+                   parent_permission: permission, id: person.id }
+               elsif person.instance_of?(Teacher)
+                 { class: person.class, age: person.age, name: person.name, specialization: person.specialization, id: person.id }
+               end
+             end
+           else
+             []
+           end
+    people_file = File.open("#{DATA_DIRECTORY}people.json", 'w')
     people_file.write(JSON.pretty_generate(data))
     people_file.close
+  end
+
+  def read_rentals_from_file
+    if File.exist?("#{DATA_DIRECTORY}rentals.json")
+      rentals_file = File.open("#{DATA_DIRECTORY}rentals.json")
+      data = JSON.parse(rentals_file.read)
+      data.each do |rental|
+        filtered_person = @people.find {|person| rental['person_id'] == person.id}
+        filtered_book = @books.find {|book| rental['book_id'] == book.id}
+        @rentals << Rental.new(rental['date'], filtered_person, filtered_book)
+      end
+      rentals_file.close
+    else
+      @rentals = []
+      write_rentals_data
+    end
+  end
+
+  def write_rentals_data
+    data = if @rentals.length.positive?
+             @rentals.map do |rental|
+               { date: rental.date, person_id: rental.person.id, book_id: rental.book.id}
+             end
+           else
+             []
+           end
+    rentals_file = File.open("#{DATA_DIRECTORY}rentals.json", 'w')
+    rentals_file.write(JSON.pretty_generate(data))
+    rentals_file.close
   end
 end
