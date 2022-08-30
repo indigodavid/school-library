@@ -13,6 +13,7 @@ class App
     @books = []
     @rentals = []
     @classroom = 'Default Class'
+    read_people_from_file
     read_books_from_file
   end
 
@@ -37,12 +38,14 @@ class App
   def create_student(age, name, parent_permission)
     student = Student.new(age, @classroom, name, parent_permission: parent_permission)
     @people.push(student)
+    write_people_data
     puts 'Student created successfully'
   end
 
   def create_teacher(age, specialization, name)
     teacher = Teacher.new(age, specialization, name)
     @people.push(teacher)
+    write_people_data
     puts 'Teacher created successfully'
   end
 
@@ -98,9 +101,9 @@ class App
       data = JSON.parse(people_file.read)
       data.each do |person|
         if person['class'] == 'Student'
-          @people << Student.new(person['age'].to_i, person['clasroom'], person['name'], person['parent_permission'].to_b)
+          @people << Student.new(person['age'], person['clasroom'], person['name'], parent_permission: person['parent_permission'])
         elsif person['class'] == 'Teacher'
-          @people << Teacher.new(person['age'].to_i, person['specialization'], person['name'])
+          @people << Teacher.new(person['age'], person['specialization'], person['name'])
         end
       end
       people_file.close
@@ -111,16 +114,19 @@ class App
   end
 
   def write_people_data
-    if @books.length > 0
-      data = @books.map do |book|
-        { title: book.title, author: book.author }
+    if @people.length > 0
+      data = @people.map do |person|
+        if person.class == Student
+        { class: person.class, age: person.age, name: person.name, classroom: person.classroom, parent_permission: person.parent_permission }
+        elsif person.class == Teacher
+          { class: person.class, age: person.age, name: person.name, specialization: person.specialization }
+        end
       end
     else
       data = []
     end
-    books_file = File.open("#{DATA_DIRECTORY}books.json", "w")
-    books_file.write(JSON.pretty_generate(data))
-    books_file.close
+    people_file = File.open("#{DATA_DIRECTORY}people.json", "w")
+    people_file.write(JSON.pretty_generate(data))
+    people_file.close
   end
-
 end
