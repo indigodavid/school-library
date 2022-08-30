@@ -1,17 +1,22 @@
 [
   {
     "class": "Student",
-    "age": 0,
-    "name": "fds",
+    "age": 25,
+    "name": "David",
     "classroom": "Default Class",
-    "parent_permission": {
-      "parent_permission": true
-    }
+    "parent_permission": true
+  },
+  {
+    "class": "Student",
+    "age": 16,
+    "name": "Julio",
+    "classroom": "Default Class",
+    "parent_permission": true
   },
   {
     "class": "Teacher",
-    "age": 321,
-    "name": "dsa",
-    "specialization": "fdsa"
+    "age": 54,
+    "name": "Fabian",
+    "specialization": "Architecture"
   }
 ]

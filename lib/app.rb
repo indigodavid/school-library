@@ -117,7 +117,8 @@ class App
     if @people.length > 0
       data = @people.map do |person|
         if person.class == Student
-        { class: person.class, age: person.age, name: person.name, classroom: person.classroom, parent_permission: person.parent_permission }
+          permission = person.parent_permission[:parent_permission]
+        { class: person.class, age: person.age, name: person.name, classroom: person.classroom, parent_permission: permission }
         elsif person.class == Teacher
           { class: person.class, age: person.age, name: person.name, specialization: person.specialization }
         end
