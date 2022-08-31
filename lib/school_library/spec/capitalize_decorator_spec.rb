@@ -2,13 +2,13 @@ require_relative '../person'
 require_relative '../capitalize_decorator'
 
 describe CapitalizeDecorator do
-  context "When testing the capitalize_decorator class" do
+  context 'When testing the capitalize_decorator class' do
     before :each do
       @person = Person.new(30, 'david')
       @capitalize_decorator = CapitalizeDecorator.new(@person)
     end
 
-    it "The capitalize_decorator should not be null" do
+    it 'The capitalize_decorator should not be null' do
       expect(@capitalize_decorator).to be_truthy
     end
 

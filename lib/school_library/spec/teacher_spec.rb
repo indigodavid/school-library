@@ -2,17 +2,17 @@ require_relative '../book'
 require_relative '../teacher'
 
 describe Teacher do
-  context "When testing the teacher class" do
+  context 'When testing the teacher class' do
     before :each do
       @teacher = Teacher.new(25, 'Developer', 'David')
     end
 
-    it "The teacher should not be null" do
+    it 'The teacher should not be null' do
       expect(@teacher).to be_truthy
     end
 
     it "The teacher's id is a number" do
-      expect(@teacher.id).to be > 0
+      expect(@teacher.id).to be.positive?
     end
 
     it "The teacher's name should be David" do

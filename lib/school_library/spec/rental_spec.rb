@@ -3,14 +3,14 @@ require_relative '../person'
 require_relative '../book'
 
 describe Rental do
-  context "When testing the rental class" do
+  context 'When testing the rental class' do
     before :each do
       @person = Person.new(30, 'David')
       @book = Book.new('The Shining', 'Stephen King')
       @rental = Rental.new('2022-08-30', @person, @book)
     end
 
-    it "The rental should not be null" do
+    it 'The rental should not be null' do
       expect(@rental).to be_truthy
     end
 

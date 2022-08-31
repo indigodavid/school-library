@@ -1,17 +1,17 @@
 require_relative '../book'
 
 describe Book do
-  context "When testing the Book class" do
+  context 'When testing the Book class' do
     before :each do
       @book = Book.new('The Shining', 'Stephen King')
     end
 
-    it "The book should not be null" do
+    it 'The book should not be null' do
       expect(@book).to be_truthy
     end
 
     it "The book's id is a number" do
-      expect(@book.id).to be > 0
+      expect(@book.id).to be.positive?
     end
 
     it "The book's title should be The Shining" do

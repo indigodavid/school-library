@@ -1,12 +1,12 @@
 require_relative '../classroom'
 
 describe Classroom do
-  context "When testing the Classroom class" do
+  context 'When testing the Classroom class' do
     before :each do
       @classroom = Classroom.new('Math')
     end
 
-    it "The Classroom should not be null" do
+    it 'The Classroom should not be null' do
       expect(@classroom).to be_truthy
     end
 

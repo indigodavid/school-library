@@ -1,17 +1,17 @@
-require_relative '../book'
+require_relative '../person'
 
 describe Person do
-  context "When testing the Person class" do
+  context 'When testing the Person class' do
     before :each do
       @person = Person.new(30, 'David')
     end
 
-    it "The Person should not be null" do
+    it 'The Person should not be null' do
       expect(@person).to be_truthy
     end
 
     it "The Person's id is a number" do
-      expect(@person.id).to be > 0
+      expect(@person.id).to be.positive?
     end
 
     it "The Person's name should be David" do

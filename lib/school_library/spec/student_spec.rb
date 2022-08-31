@@ -2,17 +2,17 @@ require_relative '../book'
 require_relative '../student'
 
 describe Student do
-  context "When testing the student class" do
+  context 'When testing the student class' do
     before :each do
       @student = Student.new(30, 'Math', 'David')
     end
 
-    it "The student should not be null" do
+    it 'The student should not be null' do
       expect(@student).to be_truthy
     end
 
     it "The student's id is a number" do
-      expect(@student.id).to be > 0
+      expect(@student.id).to be.positive?
     end
 
     it "The student's name should be David" do
