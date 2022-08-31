@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# School Library - OOP with Ruby
 
 > This project contains a Ruby project that keeps track of book rentals from a school library. It uses OOP features.
 
